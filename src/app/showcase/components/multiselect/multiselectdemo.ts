@@ -28,7 +28,11 @@ export class MultiSelectDemo {
 
     cars: SelectItem[];
 
-    selectedCars1: string[] = [];
+    selectedCars1: string[] = [
+        // 'Audi',
+        'Fiat',
+        'Honda'
+    ];
     
     selectedCars2: string[] = [];
 
@@ -38,16 +42,16 @@ export class MultiSelectDemo {
 
     constructor() {
         this.cars = [
-            {label: 'Audi', value: 'Audi'},
-            {label: 'BMW', value: 'BMW'},
-            {label: 'Fiat', value: 'Fiat'},
-            {label: 'Ford', value: 'Ford'},
+            // {label: 'Audi', value: 'Audi'},
+            // {label: 'BMW', value: 'BMW'},
+            {label: 'Fiat', value: 'Fiat', disabled: true},
+            // {label: 'Ford', value: 'Ford'},
             {label: 'Honda', value: 'Honda'},
-            {label: 'Jaguar', value: 'Jaguar'},
-            {label: 'Mercedes', value: 'Mercedes'},
-            {label: 'Renault', value: 'Renault'},
-            {label: 'VW', value: 'VW'},
-            {label: 'Volvo', value: 'Volvo'},
+            // {label: 'Jaguar', value: 'Jaguar'},
+            // {label: 'Mercedes', value: 'Mercedes', disabled: true},
+            // {label: 'Renault', value: 'Renault'},
+            // {label: 'VW', value: 'VW'},
+            // {label: 'Volvo', value: 'Volvo'},
         ];
         
         this.items = [];
