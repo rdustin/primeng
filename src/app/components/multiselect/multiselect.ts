@@ -413,6 +413,7 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterContentInit,AfterV
         else {
             let opts = this.getVisibleOptions();
             if (opts) {
+                const currentValues = this.value.slice(0);
                 this.value = [];
                 for (let i = 0; i < opts.length; i++) {
                     let option = opts[i];
@@ -420,10 +421,14 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterContentInit,AfterV
                     if (!option.disabled) {
                         this.value.push(opts[i].value);
                     }
+
+                    if (option.disabled && currentValues.includes(option.value)) {
+                        this.value.push(opts[i].value);
+                    }
                 }
             }
         }
-        
+        console.log(this.value);
         this.onModelChange(this.value);
         this.onChange.emit({originalEvent: event, value: this.value});
         this.updateLabel();
